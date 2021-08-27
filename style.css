@@ -87,6 +87,7 @@ header{
     position: relative;
     color: #fff;
     font-size: 6em;
+    text-align: center;
 }
 .btn{
     display: inline-block;
@@ -137,4 +138,92 @@ header{
     cursor: pointer;
     letter-spacing: 3px;
     padding: 13px;
+}
+.menuToggle{
+    display: none;
+}
+
+/* now make it responsive */
+@media (max-width: 991px) {
+    .menuToggle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2em;
+        cursor: pointer;
+        margin-left: 10px;
+        width: 30px;
+        height: 30px;
+        z-index: 10;
+    }
+    .menuToggle.active{
+        position: fixed;
+        top: 20px;
+        right: 20px;
+
+    }
+    .menuToggle ion-icon{
+        position: absolute;
+        --ionicon-stroke-width: 20px;
+        display: none;
+    }
+    .menuToggle.active ion-icon:nth-child(1){
+        display: none;
+    }
+    .menuToggle.active ion-icon:nth-child(2){
+        display: block;
+    }
+    .menuToggle ion-icon:nth-child(1){
+        display: block;
+    }
+    .menuToggle ion-icon:nth-child(2){
+        display: none;
+    }
+    .navigation{
+        display: none;
+    } 
+    .navigation.active{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 9;
+    }
+    .navigation li a{
+        font-size: 1.5em;
+        margin-left: 0;
+        margin: 10px 0;
+        display: inline-block;
+    }
+    .group ul li a{
+        margin-left: 20px;
+    }   
+    header{
+        padding: 20px;
+    }
+    .banner{
+        padding: 0;
+    }
+    .content h2 {
+        font-size: 3em;
+    }
+    .searchBox{
+        padding: 20px;
+        transform: translateY(100%);
+    }
+    .searchBox .inputBox {
+        width: 100%;
+    }
+}
+@media (max-width: 768px){
+    .searchBox .inputBox {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
